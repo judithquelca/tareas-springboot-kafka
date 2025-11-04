@@ -9,5 +9,7 @@ public record ProductResponse(
         BigDecimal price,
         Integer stock,
         OffsetDateTime createdAt,
-        OffsetDateTime updatedAt
+        OffsetDateTime updatedAt,
+        Long categoryId,
+        String categoryName
 ) {}
