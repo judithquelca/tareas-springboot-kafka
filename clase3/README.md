@@ -1,4 +1,4 @@
-# Clase 3 - Consolidar el product-service aplicando las buenas prácticas vistas en clase: capas bien definidas, DTOs validados, manejo uniforme de errores y categorías persistidas.
+# Tarea 3 · Refuerzo de arquitectura, validaciones y relación 1:N
 
 ## Objetivo
 Consolidar el product-service aplicando las buenas prácticas vistas en clase: capas bien definidas, DTOs validados, manejo uniforme de errores y categorías persistidas.
