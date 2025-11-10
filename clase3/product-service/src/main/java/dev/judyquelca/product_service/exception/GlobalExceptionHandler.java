@@ -1,8 +1,6 @@
 package dev.judyquelca.product_service.exception;
 
-import java.time.Instant;
-import java.util.stream.Collectors;
-
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -11,9 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import dev.judyquelca.product_service.exception.CategoryAlreadyExistsException;
 
-import jakarta.servlet.http.HttpServletRequest;
+import java.time.Instant;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -62,6 +60,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(ErrorResponse.generic("Ocurrió un error inesperado", request.getRequestURI()));
     }
+
     @ExceptionHandler(CategoryAlreadyExistsException.class)
     public ResponseEntity<ErrorResponse> handleCategoryExists(CategoryAlreadyExistsException ex, HttpServletRequest request) {
         return ResponseEntity.status(HttpStatus.CONFLICT)

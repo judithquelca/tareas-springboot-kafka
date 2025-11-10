@@ -1,8 +1,9 @@
 package dev.judyquelca.product_service.mapper;
+
 import dev.judyquelca.product_service.dto.ProductRequest;
 import dev.judyquelca.product_service.dto.ProductResponse;
-import dev.judyquelca.product_service.model.Product;
 import dev.judyquelca.product_service.model.Category;
+import dev.judyquelca.product_service.model.Product;
 
 public final class ProductMapper {
 

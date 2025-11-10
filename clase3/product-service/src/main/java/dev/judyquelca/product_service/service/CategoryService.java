@@ -1,10 +1,5 @@
 package dev.judyquelca.product_service.service;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import dev.judyquelca.product_service.dto.CategoryRequest;
 import dev.judyquelca.product_service.dto.CategoryResponse;
 import dev.judyquelca.product_service.dto.ProductResponse;
@@ -14,6 +9,10 @@ import dev.judyquelca.product_service.mapper.ProductMapper;
 import dev.judyquelca.product_service.model.Category;
 import dev.judyquelca.product_service.repository.CategoryRepository;
 import dev.judyquelca.product_service.repository.ProductRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)

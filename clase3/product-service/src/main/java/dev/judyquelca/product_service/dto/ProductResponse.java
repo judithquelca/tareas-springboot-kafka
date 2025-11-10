@@ -1,4 +1,5 @@
 package dev.judyquelca.product_service.dto;
+
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
@@ -12,4 +13,5 @@ public record ProductResponse(
         OffsetDateTime updatedAt,
         Long categoryId,
         String categoryName
-) {}
+) {
+}

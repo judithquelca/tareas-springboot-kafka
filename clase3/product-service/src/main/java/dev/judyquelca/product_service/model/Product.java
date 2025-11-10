@@ -1,20 +1,9 @@
 package dev.judyquelca.product_service.model;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
 
 
 @Entity
@@ -42,6 +31,9 @@ public class Product {
 
     @Column(name = "updated_at", nullable = false)
     private OffsetDateTime updatedAt;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     @PrePersist
     public void prePersist() {
@@ -50,12 +42,12 @@ public class Product {
         this.updatedAt = now;
     }
 
+    // Getters y setters (puedes generar con tu IDE)
+
     @PreUpdate
     public void preUpdate() {
         this.updatedAt = OffsetDateTime.now();
     }
-
-    // Getters y setters (puedes generar con tu IDE)
 
     public Long getId() {
         return id;
@@ -112,10 +104,6 @@ public class Product {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
 
 // Agregar getter y setter:
 

@@ -1,8 +1,8 @@
 package dev.judyquelca.product_service.exception;
 
-import java.time.Instant;
-
 import org.springframework.http.HttpStatus;
+
+import java.time.Instant;
 
 public record ErrorResponse(
         Instant timestamp,

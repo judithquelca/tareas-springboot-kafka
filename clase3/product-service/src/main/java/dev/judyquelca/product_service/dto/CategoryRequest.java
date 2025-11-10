@@ -10,4 +10,5 @@ public record CategoryRequest(
 
         @Size(max = 255)
         String description
-) {}
+) {
+}
